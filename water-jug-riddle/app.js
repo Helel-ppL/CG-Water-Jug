@@ -74,14 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let x = parseInt(document.getElementById('x').value);
     let y = parseInt(document.getElementById('y').value);
     const z = parseInt(document.getElementById('z').value);
-    
-
-    if (y > x) {
-      // Swap the values of x and y
-      const temp = x;
-      x = y;
-      y = temp;
-    }
 
     const steps = solveWaterJugRiddle(x, y, z);
     displaySolution(steps, x, y);
