@@ -6,21 +6,18 @@ function solveWaterJugRiddle(x, y, z) {
   const steps = [];
 
   while (jugX !== z && jugY !== z) {
-    // Fill jugX if it's empty
     if (jugX === 0) {
       jugX = jugXCapacity;
       steps.push({ jugX, jugY });
     }
 
-    // Pour jugX into jugY until jugY is full or jugX is empty
     while (jugY < jugYCapacity && jugX > 0) {
       const amountToPour = Math.min(jugX, jugYCapacity - jugY);
       jugX -= amountToPour;
       jugY += amountToPour;
       steps.push({ jugX, jugY });
     }
-
-    // Empty jugY if it's full
+    
     if (jugY === jugYCapacity) {
       jugY = 0;
       steps.push({ jugX, jugY });
